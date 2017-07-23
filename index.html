@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags always come first -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<title>Neighbourhood Map</title>
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- Bootstrap core CSS -->
+	<link href="css/compiled.min.css" rel="stylesheet">
+
+	<style>
+		.bg-skin-lp {
+			background-size: cover; 
+			background-repeat: no-repeat; 
+			background-position: center center; 
+			background-attachment: fixed;
+		}
+
+		#map {
+			width: 100%;
+			height: 800px;
+		}
+	</style>
+</head>
+
+<body class="fixed-sn black-skin bg-skin-lp">
+	<!--Double navigation-->
+	<header>
+
+		<!-- Sidebar navigation -->
+		<ul id="slide-out" class="side-nav fixed sn-bg-4 custom-scrollbar">
+
+			<!-- Logo -->
+			<li>
+				<div class="logo-wrapper waves-light">
+					<a href="#"><img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" class="img-fluid flex-center"></a>
+				</div>
+			</li>
+			<!--/. Logo -->
+
+			<!--Social-->
+			<li>
+				<ul class="social">
+					<li><a class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a></li>
+					<li><a class="icons-sm pin-ic"><i class="fa fa-linkedin"> </i></a></li>
+					<li><a class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a></li>
+					<li><a class="icons-sm tw-ic"><i class="fa fa-twitter"> </i></a></li>
+				</ul>
+			</li>
+			<!--/Social-->
+
+			<!--Search Form-->
+			<li>
+				<form class="search-form" role="search">
+					<div class="form-group waves-light">
+						<input type="text" id="txtplaces" class="form-control" placeholder="Search">
+					</div>
+				</form>
+			</li>
+			<!--/.Search Form-->
+
+			<!-- Side navigation links -->
+			<li>
+				<ul class="collapsible collapsible-accordion">
+
+				</ul>
+			</li>
+			<!--/. Side navigation links -->
+			<div class="sidenav-bg mask-strong"></div>
+		</ul>
+		<!--/. Sidebar navigation -->
+
+		<!-- Navbar -->
+		<nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+
+			<!-- SideNav slide-out button -->
+			<div class="float-xs-left">
+				<a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars"></i></a>
+			</div>
+
+			<!-- Breadcrumb-->
+			<div class="breadcrumb-dn mr-auto">
+				<p>Neighbourhood Map</p>
+			</div>
+		</nav>
+		<!-- /.Navbar -->
+	</header>
+	<!--/.Double navigation-->
+
+	<!--Main layout-->
+	<main>
+
+		<div class="container-fluid text-center" style="height: 880px;">
+
+			<!--Card-->
+			<div class="card card-cascade wider reverse my-4">
+
+				<div id="map"></div>
+
+			</div>
+			<!--/.Card-->
+
+		</div>
+
+	</main>
+	<!--/Main layout-->
+
+	<!--Footer-->
+	<footer class="page-footer center-on-small-only">
+		<hr>
+
+		<!--Social buttons-->
+		<div class="social-section text-center">
+			<ul>
+				<li><a class="btn-floating btn-small btn-fb"><i class="fa fa-facebook"> </i></a></li>
+				<li><a class="btn-floating btn-small btn-tw"><i class="fa fa-twitter"> </i></a></li>
+				<li><a class="btn-floating btn-small btn-gplus"><i class="fa fa-google-plus"> </i></a></li>
+				<li><a class="btn-floating btn-small btn-li"><i class="fa fa-linkedin"> </i></a></li>
+				<li><a class="btn-floating btn-small btn-git"><i class="fa fa-github"> </i></a></li>
+				<li><a class="btn-floating btn-small btn-ins"><i class="fa fa-instagram"> </i></a></li>
+			</ul>
+		</div>
+		<!--/.Social buttons-->
+
+		<!--Copyright-->
+		<div class="footer-copyright">
+			<div class="container-fluid">
+				© 2017 Copyright: <a href="http://www.MDBootstrap.com"> deepanshusinha.me </a>
+			</div>
+		</div>
+		<!--/.Copyright-->
+
+	</footer>
+	<!--/.Footer-->
+
+	<!-- SCRIPTS -->
+	<!-- JQuery -->
+	<script type="text/javascript" src="js/compiled.min.js"></script>
+
+	<!-- Knockout Js -->
+	<script type='text/javascript' src='js/knockout-3.4.2.js'></script>
+
+	<!-- Google Maps -->
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5gSOScPvSCrPssIez0VRSPXHfDsH7bUY&libraries=places"></script>
+
+	<!-- Custom Js -->
+	<script type='text/javascript' src='js/script.js'></script>
+	<script>
+
+		// Sidenav init
+		var container = document.getElementById('slide-out');
+		Ps.initialize(container, {
+			wheelSpeed: 2,
+			wheelPropagation: true,
+			minScrollbarLength: 20
+		});
+
+		new WOW().init();
+
+	</script>
+
+</body>
+
+</html>
