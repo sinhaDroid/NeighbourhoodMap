@@ -48,23 +48,52 @@
 			<!--Social-->
 			<li>
 				<ul class="social">
-					<li><a class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a></li>
-					<li><a class="icons-sm pin-ic"><i class="fa fa-linkedin"> </i></a></li>
-					<li><a class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a></li>
-					<li><a class="icons-sm tw-ic"><i class="fa fa-twitter"> </i></a></li>
+					<li><a class="icons-sm fb-ic" href="https://www.facebook.com/sinhadroid"><i class="fa fa-facebook"> </i></a></li>
+					<li><a class="icons-sm pin-ic" href="https://www.instagram.com/sinhadroid"><i class="fa fa-linkedin"> </i></a></li>
+					<li><a class="icons-sm gplus-ic" href="https://plus.google.com/u/1/+DeepanshuSinha"><i class="fa fa-google-plus"> </i></a></li>
+					<li><a class="icons-sm tw-ic" href="https://twitter.com/Sinha107sinha"><i class="fa fa-twitter"> </i></a></li>
 				</ul>
 			</li>
 			<!--/Social-->
 
+			<!-- Type Lists -->
+			<!-- <li>
+				<form class="search-form">
+					<div class="form-group waves-light">
+						<select class="form-control" data-bind="options: $root.typeArr, value: selectedType, optionsText: 'type' ">
+							
+						</select>
+					</div>
+				</form>
+			</li> -->
+
+			
 			<!--Search Form-->
 			<li>
 				<form class="search-form" role="search">
 					<div class="form-group waves-light">
-						<input type="text" id="txtplaces" class="form-control" placeholder="Search">
+						<input type="text" id="txtplaces" class="form-control" data-bind="addressAutoComplete: MapsApplication.mapsModel.address" placeholder="Search">
 					</div>
 				</form>
 			</li>
 			<!--/.Search Form-->
+
+			<li>
+				<form class="search-form">
+					<div class="form-group" data-bind="with: MapsApplication.mapsModel.address">
+						<ul style="padding: 0;" data-bind="foreach: MapsApplication.mapsModel.places">
+							<div data-bind="click: MapsApplication.mapsModel.goToMarker">
+								<li class="waves-light">
+									<div style="padding: 10%;">
+										<h4 data-bind="text: sName"></h4>
+										<p data-bind="text: sAddress"></p>
+									</div>
+								</li>
+							</div>
+						<ul>
+					</div>
+				</form>
+			</li>
 
 			<!-- Side navigation links -->
 			<li>
@@ -102,7 +131,7 @@
 			<!--Card-->
 			<div class="card card-cascade wider reverse my-4">
 
-				<div id="map"></div>
+				<div id="map" data-bind="mapPanel: MapsApplication.mapsModel.address"></div>
 
 			</div>
 			<!--/.Card-->
@@ -132,7 +161,7 @@
 		<!--Copyright-->
 		<div class="footer-copyright">
 			<div class="container-fluid">
-				© 2017 Copyright: <a href="http://www.MDBootstrap.com"> deepanshusinha.me </a>
+				© 2017 Copyright: <a href="http://www.deepanshusinha.me"> Deepanshu Sinha </a>
 			</div>
 		</div>
 		<!--/.Copyright-->
